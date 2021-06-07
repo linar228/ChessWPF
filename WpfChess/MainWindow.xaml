@@ -33,70 +33,78 @@
             <RowDefinition Height="100" />
         </Grid.RowDefinitions>
 
-        <Button Grid.Column="2" Grid.Row="1" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="8" Grid.Row="1" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="1" Grid.Row="2" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="4" Grid.Row="1" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="6" Grid.Row="1" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="3" Grid.Row="2" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="5" Grid.Row="2" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="7" Grid.Row="2" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="6" Grid.Row="3" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="2" Grid.Row="3" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="4" Grid.Row="3" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="8" Grid.Row="3" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="3" Grid.Row="4" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="5" Grid.Row="4" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="7" Grid.Row="4" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="1" Grid.Row="4" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="6" Grid.Row="5" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="2" Grid.Row="5" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="4" Grid.Row="5" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="8" Grid.Row="5" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="3" Grid.Row="6" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="5" Grid.Row="6" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="7" Grid.Row="6" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="1" Grid.Row="6" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="6" Grid.Row="7" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="2" Grid.Row="7" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="4" Grid.Row="7" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="8" Grid.Row="7" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="3" Grid.Row="8" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="5" Grid.Row="8" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="7" Grid.Row="8" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="1" Grid.Row="8" Background="BurlyWood" Click="Button_Click" />
-        <Button Grid.Column="1" Grid.Row="1" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="1" Grid.Row="3" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="1" Grid.Row="5" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="1" Grid.Row="7" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="2" Grid.Row="2" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="2" Grid.Row="4" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="2" Grid.Row="6" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="2" Grid.Row="8" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="3" Grid.Row="1" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="3" Grid.Row="3" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="3" Grid.Row="5" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="3" Grid.Row="7" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="4" Grid.Row="2" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="4" Grid.Row="4" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="4" Grid.Row="6" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="4" Grid.Row="8" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="5" Grid.Row="1" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="5" Grid.Row="3" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="5" Grid.Row="5" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="5" Grid.Row="7" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="6" Grid.Row="2" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="6" Grid.Row="4" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="6" Grid.Row="6" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="6" Grid.Row="8" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="7" Grid.Row="1" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="7" Grid.Row="3" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="7" Grid.Row="5" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="7" Grid.Row="7" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="8" Grid.Row="2" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="8" Grid.Row="4" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="8" Grid.Row="6" Background="Brown" Click="Button_Click" />
-        <Button Grid.Column="8" Grid.Row="8" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_1_1" Grid.Column="1" Grid.Row="1" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_1_2" Grid.Column="2" Grid.Row="1" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_1_3" Grid.Column="3" Grid.Row="1" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_1_4" Grid.Column="4" Grid.Row="1" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_1_5" Grid.Column="5" Grid.Row="1" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_1_6" Grid.Column="6" Grid.Row="1" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_1_7" Grid.Column="7" Grid.Row="1" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_1_8" Grid.Column="8" Grid.Row="1" Background="BurlyWood" Click="Button_Click" />
+        
+        <Button x:Name="btn_2_1" Grid.Column="1" Grid.Row="2" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_2_2" Grid.Column="2" Grid.Row="2" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_2_3" Grid.Column="3" Grid.Row="2" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_2_4" Grid.Column="4" Grid.Row="2" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_2_5" Grid.Column="5" Grid.Row="2" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_2_6" Grid.Column="6" Grid.Row="2" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_2_7" Grid.Column="7" Grid.Row="2" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_2_8" Grid.Column="8" Grid.Row="2" Background="Brown" Click="Button_Click" />
+        
+        <Button x:Name="btn_3_1" Grid.Column="1" Grid.Row="3" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_3_2" Grid.Column="2" Grid.Row="3" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_3_3" Grid.Column="3" Grid.Row="3" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_3_4" Grid.Column="4" Grid.Row="3" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_3_5" Grid.Column="5" Grid.Row="3" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_3_6" Grid.Column="6" Grid.Row="3" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_3_7" Grid.Column="7" Grid.Row="3" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_3_8" Grid.Column="8" Grid.Row="3" Background="BurlyWood" Click="Button_Click" />
+        
+        <Button x:Name="btn_4_1" Grid.Column="1" Grid.Row="4" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_4_2" Grid.Column="2" Grid.Row="4" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_4_3" Grid.Column="3" Grid.Row="4" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_4_4" Grid.Column="4" Grid.Row="4" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_4_5" Grid.Column="5" Grid.Row="4" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_4_6" Grid.Column="6" Grid.Row="4" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_4_7" Grid.Column="7" Grid.Row="4" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_4_8" Grid.Column="8" Grid.Row="4" Background="Brown" Click="Button_Click" />
+        
+        <Button x:Name="btn_5_1" Grid.Column="1" Grid.Row="5" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_5_2" Grid.Column="2" Grid.Row="5" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_5_3" Grid.Column="3" Grid.Row="5" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_5_4" Grid.Column="4" Grid.Row="5" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_5_5" Grid.Column="5" Grid.Row="5" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_5_6" Grid.Column="6" Grid.Row="5" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_5_7" Grid.Column="7" Grid.Row="5" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_5_8" Grid.Column="8" Grid.Row="5" Background="BurlyWood" Click="Button_Click" />
+
+        <Button x:Name="btn_6_1" Grid.Column="1" Grid.Row="6" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_6_2" Grid.Column="2" Grid.Row="6" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_6_3" Grid.Column="3" Grid.Row="6" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_6_4" Grid.Column="4" Grid.Row="6" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_6_5" Grid.Column="5" Grid.Row="6" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_6_6" Grid.Column="6" Grid.Row="6" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_6_7" Grid.Column="7" Grid.Row="6" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_6_8" Grid.Column="8" Grid.Row="6" Background="Brown" Click="Button_Click" />
+        
+        <Button x:Name="btn_7_1" Grid.Column="1" Grid.Row="7" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_7_2" Grid.Column="2" Grid.Row="7" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_7_3" Grid.Column="3" Grid.Row="7" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_7_4" Grid.Column="4" Grid.Row="7" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_7_5" Grid.Column="5" Grid.Row="7" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_7_6" Grid.Column="6" Grid.Row="7" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_7_7" Grid.Column="7" Grid.Row="7" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_7_8" Grid.Column="8" Grid.Row="7" Background="BurlyWood" Click="Button_Click" />
+
+        <Button x:Name="btn_8_1" Grid.Column="1" Grid.Row="8" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_8_2" Grid.Column="2" Grid.Row="8" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_8_3" Grid.Column="3" Grid.Row="8" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_8_4" Grid.Column="4" Grid.Row="8" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_8_5" Grid.Column="5" Grid.Row="8" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_8_6" Grid.Column="6" Grid.Row="8" Background="Brown" Click="Button_Click" />
+        <Button x:Name="btn_8_7" Grid.Column="7" Grid.Row="8" Background="BurlyWood" Click="Button_Click" />
+        <Button x:Name="btn_8_8" Grid.Column="8" Grid.Row="8" Background="Brown" Click="Button_Click" />
+
         <Label x:Name="A" Content="A" Grid.Column="1" HorizontalAlignment="Left" Margin="30,10,0,0" VerticalAlignment="Top" FontSize="48"/>
         <Label x:Name="B" Content="B" Grid.Column="2" HorizontalAlignment="Left" Margin="30,10,0,0" VerticalAlignment="Top" FontSize="48"/>
         <Label x:Name="C" Content="C" Grid.Column="3" HorizontalAlignment="Left" Margin="30,10,0,0" VerticalAlignment="Top" FontSize="48"/>
