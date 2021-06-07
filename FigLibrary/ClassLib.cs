@@ -82,7 +82,7 @@ namespace Library
 
         public override bool Move(int newX, int newY)
         {
-            return (X == newX || Y == newY || Math.Abs(X - newX) == Math.Abs(y - newY));
+            return (X == newX || Y == newY || Math.Abs(X - newX) == Math.Abs(Y - newY));
         }
     }
 
@@ -137,4 +137,5 @@ namespace Library
         }
     }
 }
+
 

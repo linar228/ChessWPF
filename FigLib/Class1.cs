@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Library
+namespace FigLib
 {
     public class ClassLib
     {
@@ -82,7 +86,7 @@ namespace Library
 
         public override bool Move(int newX, int newY)
         {
-            return (X == newX || Y == newY || Math.Abs(X - newX) == Math.Abs(y - newY));
+            return (X == newX || Y == newY || Math.Abs(X - newX) == Math.Abs(Y - newY));
         }
     }
 
@@ -137,4 +141,6 @@ namespace Library
         }
     }
 }
+
+
 

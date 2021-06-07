@@ -120,5 +120,6 @@
         <Button x:Name="Queen" Content="Queen " Grid.Column="9" HorizontalAlignment="Left" Margin="28,87,-72,0" Grid.Row="4" VerticalAlignment="Top" Width="145" Height="67" Grid.RowSpan="2" FontSize="24" Click="Queen_Click"/>
         <Button x:Name="King" Content="King " Grid.Column="9" HorizontalAlignment="Left" Margin="28,63,-72,0" Grid.Row="5" VerticalAlignment="Top" Width="145" Height="69" Grid.RowSpan="2" FontSize="24" Click="King_Click"/>
         <TextBox x:Name="fig" Grid.Column="9" HorizontalAlignment="Left" Height="23" Margin="63,10,-82,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" SelectionOpacity="0" UndoLimit="0" Opacity="0" FontSize="20" Background="{x:Null}" Foreground="#FF959595" FontWeight="Bold"/>
+        <Button x:Name="Clear" Content="Clear" Grid.Column="9" HorizontalAlignment="Left" Margin="28,40,-72,0" Grid.Row="6" VerticalAlignment="Top" Width="145" Height="69" Grid.RowSpan="2" FontSize="24" Click="Clear_Click"/>
     </Grid>
 </Window>
