@@ -4,153 +4,172 @@ Task: Chess 2
 */
 using System;
 
-class Program
+namespace FigLib
 {
-    static void Main()
+    public static class FigClassMaker
     {
-        string figure = Console.ReadLine();
-        int x = Convert.ToInt32(Console.ReadLine());
-        int y = Convert.ToInt32(Console.ReadLine());
-        int x1 = Convert.ToInt32(Console.ReadLine());
-        int y1 = Convert.ToInt32(Console.ReadLine());
-
-        switch (figure)
+        public static FigClass Make(string pieceCode, int x, int y)
         {
-            case "K":
-                King king = new King(x, y);
-                Console.WriteLine($"King: {king.Move(x1, y1)}");
-                break;
-            case "Q":
-                Queen queen = new Queen(x, y);
-                Console.WriteLine($"Queen: {queen.Move(x1, y1)}");
-                break;
-            case "B":
-                Bishop bishop = new Bishop(x, y);
-                Console.WriteLine($"Bishop: {bishop.Move(x1, y1)}");
-                break;
-            case "N":
-                Knight knight = new Knight(x, y);
-                Console.WriteLine($"Knight: {knight.Move(x1, y1)}");
-                break;
-            case "R":
-                Rook rook = new Rook(x, y);
-                Console.WriteLine($"Rook: {rook.Move(x1, y1)}");
-                break;
-            default:
-                Console.WriteLine("Unknown piece code. Try again.");
-                break;
+            FigClass piece = null;
+
+            switch (pieceCode)
+            {
+                case "K":
+                    piece = new King(x, y);
+                    break;
+
+                case "Q":
+                    piece = new Queen(x, y);
+                    break;
+
+                case "B":
+                    piece = new Bishop(x, y);
+                    break;
+
+                case "N":
+                    piece = new Knight(x, y);
+                    break;
+
+                case "R":
+                    piece = new Rook(x, y);
+                    break;
+
+                case "P":
+                    piece = new Pawn(x, y);
+                    break;
+            }
+            return piece;
         }
     }
-}
-class Figure
-{
-    protected int X;
-    protected int Y;
-
-    public Figure(int X, int Y)
+    public abstract class FigClass
     {
-        this.X = X;
-        this.Y = Y;
-    }
+        protected int X;
+        protected int Y;
 
-    public virtual bool Move(int X1, int Y1)
-    {
-        return false;
-    }
-}
-
-class Rook : Figure
-{
-    public Rook(int X, int Y) : base(X, Y)
-    {
-    }
-
-    public override bool Move(int X1, int Y1)
-    {
-        if (X == X1 || Y == Y1)
+        public FigClass(int X, int Y)
         {
-            this.X = X1;
-            this.Y = Y1;
-            return true;
+            this.X = X;
+            this.Y = Y;
         }
-        else
+
+        public virtual bool Move(int X1, int Y1)
+        {
             return false;
-    }
-}
-
-class Knight : Figure
-{
-    public Knight(int X, int Y) : base(X, Y)
-    {
-    }
-
-    public override bool Move(int X1, int Y1)
-    {
-        if (Math.Abs(X1 - X) == 1 && Math.Abs(Y1 - Y) == 2 ||
-        Math.Abs(X1 - X) == 2 && Math.Abs(Y1 - Y) == 1)
-        {
-            this.X = X1;
-            this.Y = Y1;
-            return true;
         }
-        else
-            return false;
-    }
-}
-
-class Bishop : Figure
-{
-    public Bishop(int X, int Y) : base(X, Y)
-    {
     }
 
-    public override bool Move(int X1, int Y1)
+    class Rook : FigClass
     {
-        if (Math.Abs(X1 - X) == Math.Abs(Y1 - Y))
+        public Rook(int X, int Y) : base(X, Y)
         {
-            this.X = X1;
-            this.Y = Y1;
-            return true;
         }
-        else
-            return false;
-    }
-}
 
-class Queen : Figure
-{
-    public Queen(int X, int Y) : base(X, Y)
-    {
-    }
-
-    public override bool Move(int X1, int Y1)
-    {
-        if (X == X1 || Y == Y1 || Math.Abs(X1 - X) == Math.Abs(Y1 - Y))
+        public override bool Move(int X1, int Y1)
         {
-            this.X = X1;
-            this.Y = Y1;
-            return true;
+            if (X == X1 || Y == Y1)
+            {
+                this.X = X1;
+                this.Y = Y1;
+                return true;
+            }
+            else
+                return false;
         }
-        else
-            return false;
-    }
-}
-
-class King : Figure
-{
-    public King(int X, int Y) : base(X, Y)
-    {
     }
 
-    public override bool Move(int X1, int Y1)
+    class Knight : FigClass
     {
-        if (Math.Abs(X1 - X) <= 1 && Math.Abs(Y1 - Y) <= 1)
+        public Knight(int X, int Y) : base(X, Y)
         {
-            this.X = X1;
-            this.Y = Y1;
-            return true;
         }
-        else
-            return false;
+
+        public override bool Move(int X1, int Y1)
+        {
+            if (Math.Abs(X1 - X) == 1 && Math.Abs(Y1 - Y) == 2 ||
+            Math.Abs(X1 - X) == 2 && Math.Abs(Y1 - Y) == 1)
+            {
+                this.X = X1;
+                this.Y = Y1;
+                return true;
+            }
+            else
+                return false;
+        }
+    }
+
+    class Bishop : FigClass
+    {
+        public Bishop(int X, int Y) : base(X, Y)
+        {
+        }
+
+        public override bool Move(int X1, int Y1)
+        {
+            if (Math.Abs(X1 - X) == Math.Abs(Y1 - Y))
+            {
+                this.X = X1;
+                this.Y = Y1;
+                return true;
+            }
+            else
+                return false;
+        }
+    }
+
+    class Queen : FigClass
+    {
+        public Queen(int X, int Y) : base(X, Y)
+        {
+        }
+
+        public override bool Move(int X1, int Y1)
+        {
+            if (X == X1 || Y == Y1 || Math.Abs(X1 - X) == Math.Abs(Y1 - Y))
+            {
+                this.X = X1;
+                this.Y = Y1;
+                return true;
+            }
+            else
+                return false;
+        }
+    }
+
+    class King : FigClass
+    {
+        public King(int X, int Y) : base(X, Y)
+        {
+        }
+
+        public override bool Move(int X1, int Y1)
+        {
+            if (Math.Abs(X1 - X) <= 1 && Math.Abs(Y1 - Y) <= 1)
+            {
+                this.X = X1;
+                this.Y = Y1;
+                return true;
+            }
+            else
+                return false;
+        }
+    }
+
+    class Pawn : FigClass
+    {
+        public Pawn(int X, int Y) : base(X, Y)
+        {
+        }
+
+        public override bool Move(int X1, int Y1)
+        {
+            if (X == X1 && (Y - 1 == Y1 || Y + 1 == Y1))
+            {
+                this.X = X1;
+                this.Y = Y1;
+                return true;
+            }
+            else
+                return false;
+        }
     }
 }

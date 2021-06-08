@@ -18,88 +18,80 @@ namespace WpfChess
 {
     public partial class MainWindow : Window
     {
-        protected string SelectedFigure;
-        protected List<Button> BoardRectangles;
-        private FigLib.Figure figure;
+        private string ActivFig;
+        private List<Button> ButList;
+        private FigClass figclass;
+
         public MainWindow()
         {
             InitializeComponent();
-            BoardRectangles = new List<Button>();
+            ButList = new List<Button>();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            (sender as Button).Content = fig.Text;
-            Button button = (Button)sender;
-            string btnName = button.Name;
+            string btnName = (sender as Button).Name;
             var btnNames = btnName.Split('_');
 
-            if (button.Content == null && SelectedFigure != "")
+            if ((sender as Button).Content == null && ActivFig != "")
             {
-                Clear_Click(null, null);
+                FillButFig(sender);
 
-                button.Content = new Rectangle { Width = 75, Height = 75, Name = SelectedFigure };
-                BoardRectangles.Add(button);
-
-                figure = ClassLib.Make(SelectedFigure, Convert.ToInt32(btnNames[2]), Convert.ToInt32(btnNames[1]));
-
-                SelectedFigure = "";
+                figclass = FigMaker.Make(ActivFig, Convert.ToInt32(btnNames[2]), Convert.ToInt32(btnNames[1]));
+                ActivFig = "";
             }
-            else if (figure.PreMove(Convert.ToInt32(btnNames[2]), Convert.ToInt32(btnNames[1])))
-            {
-                Clear_Click(null, null);
 
-                button.Content = new Rectangle { Width = 75, Height = 75, Name = SelectedFigure };
-                BoardRectangles.Add(button);
-            }
+            else if (figclass.PreMove(Convert.ToInt32(btnNames[2]), Convert.ToInt32(btnNames[1])))
+                FillButFig(sender);
+        }
+
+        public void FillButFig(object sender)
+        {
+            Clear_Click(null, null);
+
+            (sender as Button).Content = fig.Text;
+            ButList.Add(sender as Button);
         }
 
         private void Pawn_Click_1(object sender, RoutedEventArgs e)
         {
             fig.Text = (sender as Button).Content.ToString();
-            SelectedFigure = "P";
+            ActivFig = "Pawn";
         }
 
         private void Knight__Click(object sender, RoutedEventArgs e)
         {
             fig.Text = (sender as Button).Content.ToString();
-            SelectedFigure = "N";
+            ActivFig = "Knight";
         }
 
         private void Bishop_Click(object sender, RoutedEventArgs e)
         {
             fig.Text = (sender as Button).Content.ToString();
-            SelectedFigure = "B";
+            ActivFig = "Bishop";
         }
 
         private void Rook_Click(object sender, RoutedEventArgs e)
         {
             fig.Text = (sender as Button).Content.ToString();
-            SelectedFigure = "R";
+            ActivFig = "Rook";
         }
 
         private void Queen_Click(object sender, RoutedEventArgs e)
         {
             fig.Text = (sender as Button).Content.ToString();
-            SelectedFigure = "Q";
+            ActivFig = "Queen";
         }
 
         private void King_Click(object sender, RoutedEventArgs e)
         {
             fig.Text = (sender as Button).Content.ToString();
-            SelectedFigure = "K";
-
-            Button button = (Button)sender;
-
-            string btnName = button.Name;
-            var btnNames = btnName.Split('_');
-
-            
+            ActivFig = "King";
         }
 
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
-            foreach (Button boardBtn in BoardRectangles)
+            foreach (Button boardBtn in ButList)
                 boardBtn.Content = null;
         }
     }

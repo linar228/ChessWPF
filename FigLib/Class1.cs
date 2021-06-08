@@ -6,48 +6,48 @@ using System.Threading.Tasks;
 
 namespace FigLib
 {
-    public class ClassLib
+    public class FigMaker
     {
-        public static Figure Make(string figureCode, int x, int y)
+        public static FigClass Make(string FigClassCode, int x, int y)
         {
-            Figure figure = null;
+            FigClass FigClass = null;
 
-            switch (figureCode)
+            switch (FigClassCode)
             {
-                case "K":
-                    figure = new King(x, y);
+                case "King":
+                    FigClass = new King(x, y);
                     break;
 
-                case "Q":
-                    figure = new Queen(x, y);
+                case "Queen":
+                    FigClass = new Queen(x, y);
                     break;
 
-                case "B":
-                    figure = new Bishop(x, y);
+                case "Bishop":
+                    FigClass = new Bishop(x, y);
                     break;
 
-                case "N":
-                    figure = new Knight(x, y);
+                case "Knight":
+                    FigClass = new Knight(x, y);
                     break;
 
-                case "R":
-                    figure = new Rook(x, y);
+                case "Rook":
+                    FigClass = new Rook(x, y);
                     break;
 
-                case "P":
-                    figure = new Pawn(x, y);
+                case "Pawn":
+                    FigClass = new Pawn(x, y);
                     break;
             }
-            return figure;
+            return FigClass;
         }
     }
 
-    public abstract class Figure
+    public abstract class FigClass
     {
         protected int X;
         protected int Y;
 
-        public Figure(int X, int Y)
+        public FigClass(int X, int Y)
         {
             this.X = X;
             this.Y = Y;
@@ -66,7 +66,7 @@ namespace FigLib
             return false;
         }
     }
-    class King : Figure
+    class King : FigClass
     {
         public King(int newX, int newY) : base(newX, newY)
         {
@@ -78,7 +78,7 @@ namespace FigLib
         }
     }
 
-    class Queen : Figure
+    class Queen : FigClass
     {
         public Queen(int newX, int newY) : base(newX, newY)
         {
@@ -90,7 +90,7 @@ namespace FigLib
         }
     }
 
-    class Bishop : Figure
+    class Bishop : FigClass
     {
         public Bishop(int newX, int newY) : base(newX, newY)
         {
@@ -102,7 +102,7 @@ namespace FigLib
         }
     }
 
-    class Knight : Figure
+    class Knight : FigClass
     {
         public Knight(int newX, int newY) : base(newX, newY)
         {
@@ -115,7 +115,7 @@ namespace FigLib
         }
     }
 
-    class Rook : Figure
+    class Rook : FigClass
     {
         public Rook(int newX, int newY) : base(newX, newY)
         {
@@ -127,7 +127,7 @@ namespace FigLib
         }
     }
 
-    class Pawn : Figure
+    class Pawn : FigClass
     {
         public Pawn(int newX, int newY) : base(newX, newY)
         {
@@ -135,9 +135,7 @@ namespace FigLib
 
         public override bool Move(int newX, int newY)
         {
-            return ((X == newX && Y == 7 && newY == 5) ||
-                    (X == newX && Y == 2 && newY == 4) ||
-                    (X == newX && (Y - 1 == newY || Y + 1 == newY)));
+            return (X == newX && (Y - 1 == newY || Y + 1 == newY));
         }
     }
 }
